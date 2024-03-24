@@ -1,0 +1,42 @@
+{
+  // [python] Base Settings
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  // [python] Linter Settings
+  "flake8.path": [
+    "${workspaceFolder}/.venv/bin/flake8",
+  ],
+  "flake8.args": [
+    "--config",
+    "${workspaceFolder}/pyproject.toml",
+  ],
+  // [python] Formatter Settings
+  "black-formatter.path": [
+    "${workspaceFolder}/.venv/bin/black"
+  ],
+  "black-formatter.args": [
+    "--config=${workspaceFolder}/pyproject.toml",
+  ],
+  // [python] TypeChecker Settings
+  "mypy-type-checker.importStrategy": "fromEnvironment",
+  "mypy-type-checker.path": [
+    "${workspaceFolder}/.venv/bin/mypy",
+  ],
+  "mypy-type-checker.args": [
+    "--config-file=${workspaceFolder}/pyproject.toml",
+  ],
+  // [python] TestTool Settings
+  "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest",
+  // [python] Sorting Settings
+  "isort.path": [
+    "${workspaceFolder}/.venv/bin/isort"
+  ],
+  "isort.args": [
+    "--setings-file",
+    "${workspaceFolder}/pyproject.toml",
+  ],
+}
