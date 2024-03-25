@@ -8,7 +8,7 @@
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
   // [python] Linter Settings
   "flake8.path": [
-    "${workspaceFolder}/.venv/bin/flake8",
+    "${workspaceFolder}/.venv/bin/pflake8",
   ],
   "flake8.args": [
     "--config",
@@ -29,6 +29,11 @@
   "mypy-type-checker.args": [
     "--config-file=${workspaceFolder}/pyproject.toml",
   ],
+  "mypy-type-checker.severity": {
+    "error": "Error",
+    "note": "Information",
+    "name-defined": "Warning"
+  },
   // [python] TestTool Settings
   "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest",
   // [python] Sorting Settings
