@@ -2,14 +2,23 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  // [python] basic settings
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/poetry.lock": true
+  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
   },
-  // [python] linter settings
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
   "flake8.path": [
     "${workspaceFolder}/.venv/bin/pflake8",
   ],
@@ -17,14 +26,12 @@
     "--config",
     "${workspaceFolder}/pyproject.toml",
   ],
-  // [python] formatter settings
   "black-formatter.path": [
     "${workspaceFolder}/.venv/bin/black"
   ],
   "black-formatter.args": [
     "--config=${workspaceFolder}/pyproject.toml",
   ],
-  // [python] type-checker settings
   "mypy-type-checker.importStrategy": "fromEnvironment",
   "mypy-type-checker.path": [
     "${workspaceFolder}/.venv/bin/mypy",
@@ -37,9 +44,7 @@
     "note": "Information",
     "name-defined": "Warning"
   },
-  // [python] test-tool settings
   "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest",
-  // [python] library-sorting-tool settings
   "isort.path": [
     "${workspaceFolder}/.venv/bin/isort"
   ],
