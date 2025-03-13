@@ -1,0 +1,59 @@
+[project]
+name = "pytemplate"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = [{ name = "Hiroto Ueda", email = "ueda.hiroto.41@rtri.or.jp" }]
+maintainers = [{ name = "Hiroto Ueda", email = "ueda.hiroto.41@rtri.or.jp" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+dev-dependencies = ["mypy", "pytest", "ruff"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes
+  "I",  # isort
+  "B",  # flake8-bugbear
+  "C4", # flake8-comprehensions
+  "UP", # pyupgrade
+]
+ignore = [
+  # "E501",
+  "B008",
+  # "C901",
+  # "W191",
+  "B904",
+]
+pydocstyle.convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.13"
+show_column_numbers = true
+show_error_context = true
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+# warning
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
